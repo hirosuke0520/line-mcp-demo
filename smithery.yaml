@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - channelAccessToken
+      - destinationUserId
+    properties:
+      channelAccessToken:
+        type: string
+        description: LINE channel access token
+      destinationUserId:
+        type: string
+        description: LINE destination user ID
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: {
+        CHANNEL_ACCESS_TOKEN: config.channelAccessToken,
+        DESTINATION_USER_ID: config.destinationUserId
+      }
+    })
+  exampleConfig:
+    channelAccessToken: YOUR_LINE_CHANNEL_ACCESS_TOKEN
+    destinationUserId: DESTINATION_USER_ID

@@ -2,6 +2,8 @@
 
 # LINE Bot MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@hirosuke0520/line-mcp-demo)](https://smithery.ai/server/@hirosuke0520/line-mcp-demo)
+
 [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server implementation that integrates the LINE Messaging API to connect an AI Agent to the LINE Official Account.
 
 ![](/assets/demo.png)
@@ -30,6 +32,14 @@
 
 
 ## Installation
+
+### Installing via Smithery
+
+To install LINE Bot Integration Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@hirosuke0520/line-mcp-demo):
+
+```bash
+npx -y @smithery/cli install @hirosuke0520/line-mcp-demo --client claude
+```
 
 ### Step 1: Install line-bot-mcp-server
 
